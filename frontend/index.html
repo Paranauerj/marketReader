@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .indicators{
+            margin-left: 83vw;
+            margin-top: -70vh;
+            position: absolute;
+        }
+
+        .indicator{
+            text-align: left;
+            margin-bottom: 4vh;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" id="backtrack_days"/>
+    <button onclick="ChartServices.backtrack()">Voltar</button>
+    <button onclick="ChartServices.newline()">Nova linha</button>
+    <button onclick="ChartServices.newsequence()">Nova sequência</button>
+    <button onclick="ChartServices.stopsequence()">Parar sequência</button>
+    <button onclick="ChartServices.deletelastline()">Deletar Última Linha</button>
+    <input type="text" id="pair"/>
+    <button onclick="ChartServices.openPair()">Load Pair</button>
+    <div id="tvchart"></div>
+    <div id="rsichart"></div>
+    <div class="indicators">
+        <div class="indicator">
+            <span>Short Term</span>
+            <span id="short_term"></span>
+        </div>
+        <div class="indicator">
+            <span>Mid Term</span>
+            <span id="mid_term"></span>
+        </div>
+        <div class="indicator">
+            <span>Long Term</span>
+            <span id="long_term"></span>
+        </div>
+        <div class="indicator">
+            <span>Wedge</span>
+            <span id="wedge"></span>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+    <script src="./index.js"></script>
+    
+    <script type="module">
+        import('./app/app.mjs').then(module => {
+            module.Start("btcusdt", LightweightCharts);
+        });
+    </script>
+
+</body>
+</html>
