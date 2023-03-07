@@ -51,7 +51,7 @@ function LoadChart(pair, chart, candleSeries, wedgeElement, bt, cb){
                 high: d.MaxPrice,
                 low: d.MinPrice,
                 close: d.ClosePrice,
-                volume: d.Volume
+                //volume: d.Volume
             };
         });
 
@@ -63,7 +63,7 @@ function LoadChart(pair, chart, candleSeries, wedgeElement, bt, cb){
             ema500Line = ema500;
         });
 
-        LoadVolume(chart, cdata);
+        //LoadVolume(chart, cdata);
         DrawSupport(candleSeries, 30);
         DrawSupport(candleSeries, 120);
         DrawResistance(candleSeries, 30);
